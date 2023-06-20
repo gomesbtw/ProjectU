@@ -2,13 +2,13 @@ import criaHashESalSenha from "../utils/criaHashESalSenha.js";
 import { usuariosColecao } from "./dbConnect.js";
 
 function encontrarUsuario(contato) {
-  return usuariosColecao.findOne({
+  find(query).limit(1).next(function(err, doc){
+    // handle data
     $or: [
       { email: contato },
       { tel: contato }
     ]
-  });
-
+ });
 }
 
 function cadastrarUsuario({ email, tel,senha }) {
