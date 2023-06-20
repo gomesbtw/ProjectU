@@ -1,0 +1,94 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+    font-family:"Archivo"
+}
+
+ul,ol{
+    list-style:none;
+    margin:0;
+    padding:0
+}
+a{
+    text-decoration:none
+}
+img{
+    max-width:100%;
+    height:auto;
+    display:block
+}
+p,h1,h2,h3,h4,h5,h6{
+    margin:0
+}
+body{
+    font-family:"Archivo";
+    background-color:#fff;
+    overflow-x:hidden
+}
+html{
+    scroll-behavior:smooth;
+    font-size:62.5%
+}
+
+header{
+    padding:0px 50px;
+    background:#040405;
+    backdrop-filter:blur(24px);
+    -webkit-backdrop-filter:blur(24px);
+    border-bottom:1px solid #101013;
+    z-index:999;
+    width:100%;
+    position:fixed;
+    top:0;
+    left:0
+}
+
+header .grid-layout nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    height:100px;
+    padding:0px 8px
+}
+
+header .grid-layout nav img{
+    width:150px
+}
+header .grid-layout nav .nav-list{
+    list-style:none;
+    display:flex
+}
+header .grid-layout nav .nav-list li{
+    margin-left:48px
+}
+@media screen and (max-width: 992px){
+    header .grid-layout nav .nav-list li{
+        margin-left:0px
+    }
+}
+header .grid-layout nav .nav-list li a{
+    color:#d8d8d8;
+    position:relative;
+    font-size:1.8rem
+}
+header .grid-layout nav .nav-list li a::after{
+    content:"";
+    position:absolute;
+    width:100%;
+    transform:scaleX(0);
+    height:1px;
+    bottom:-7px;
+    left:0;
+    background:linear-gradient(270deg, #ff3a5e 0%, #17161d 100%);
+    transform-origin:bottom right;
+    transition:transform 0.5s cubic-bezier(0.86, 0, 0.07, 1)
+}
+header .grid-layout nav .nav-list li a:hover::after{
+    transform:scaleX(1);
+    transform-origin:bottom left
+}
+header .grid-layout nav .nav-list li a:hover{
+    color:#fff
+}
