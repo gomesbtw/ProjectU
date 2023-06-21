@@ -2,8 +2,7 @@ import criaHashESalSenha from "../utils/criaHashESalSenha.js";
 import { usuariosColecao } from "./dbConnect.js";
 
 function encontrarUsuario(contato) {
-  find(query).limit(1).next(function(err, doc){
-    // handle data
+  return usuariosColecao.findOne({ 
     $or: [
       { email: contato },
       { tel: contato }
