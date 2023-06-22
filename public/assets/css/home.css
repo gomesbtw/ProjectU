@@ -14,9 +14,10 @@ a{
     text-decoration:none
 }
 img{
-    max-width:100%;
-    height:auto;
-    display:block
+    max-width:100px;
+    max-height: 100px;
+    display:block;
+
 }
 p,h1,h2,h3,h4,h5,h6{
     margin:0
@@ -92,3 +93,23 @@ header .grid-layout nav .nav-list li a:hover::after{
 header .grid-layout nav .nav-list li a:hover{
     color:#fff
 }
+
+footer{
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    justify-content:center;
+    margin-top:24px;
+    display:flex;
+    align-items:center;
+    border-top:1px solid rgba(114,114,126,0.2);
+    background-color: #040405;
+    }
+  
+  footer p{
+    color:#d8d8d8;
+    text-align:center;
+    font-size:1.8rem
+  }
