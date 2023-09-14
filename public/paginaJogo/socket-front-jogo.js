@@ -2,8 +2,8 @@ import { obterCookie } from "../utils/cookies.js";
 
 
 
-function mostrarImagemJogo(dados){
-    socket.emit("imagemJogoPrincipal",dados);
+function mostrarImagemJogo(){
+    socket.emit("imagemJogoPrincipal");
 };
 
 
@@ -35,31 +35,18 @@ socket.on("connect_error", (erro) => {
 
 
 socket.on("retorno_imagem_sucesso", (dados2) =>{
-  try{
-      const dados1 = dados2[0]
-      const imagem = document.getElementById("img-game")
-      imagem.src= dados1
-    
-      const imagem2 = document.getElementById("img-game-segunda")
-      const dados3 = dados2[1]
-      imagem2.src= dados3
-  }catch{
-    console.log("n tem");
-  }
+  
 
   const imagens = document.getElementsByName("img-game")
-  for (let i = 0; i < imagens.length; i++) {
+  imagens.forEach((imagem, i) => {
     if (i < dados2.length) {
-      imagens[i].src = dados2[i];
+      imagem.src = dados2[i];
       console.log("definiu");
-    } else if (i >= dados2.length) {
-      console.log("concluido");
-      break; // Encerra o loop, já que não há mais dados em dados2
     } else {
-      console.log(imagens[i].src);
-      console.log("continou");
+      console.log("concluído");
+      return; // Encerra a iteração, já que não há mais dados em dados2
     }
-  }
+  });
   document.dispatchEvent(new Event('imagens-prontas'));
 });
 
