@@ -1,38 +1,24 @@
 import {jogosColecao} from "./dbConnect.js";
 
 
-
 async function obterImagemDoBancoDeDados() {
-    try {
-      const cursor = jogosColecao.find();
-      const jogos = await cursor.toArray();
-     
-       
-      return jogos[0].img;
-        
-    
-    } catch (error) {
-      console.log("deu erro no banco de dados");
-      console.error(error);
-    }
-  }
-  async function obterImagemDoBancoDeDados2() {
-    try {
-      const cursor = jogosColecao.find();
-      const jogos = await cursor.toArray();
-    
-       
-      return jogos[1].img;
-        
-    
-    } catch (error) {
-      console.log("deu erro no banco de dados");
-      console.error(error);
-    }
-  }
- 
-  
+  try {
+    const cursor = jogosColecao.find();
+    const jogos = await cursor.toArray();
 
-export {obterImagemDoBancoDeDados, obterImagemDoBancoDeDados2};
+    // Verifica se há jogos e se há imagens definidas
+    const imagens = jogos.map((jogo) => jogo.img).filter(Boolean);
+    console.log(imagens)
+    return imagens;
+  } catch (error) {
+    console.log("Ocorreu um erro no banco de dados.");
+    console.error(error);
+    return [];
+  }
+}
+
+
+
+export { obterImagemDoBancoDeDados };
 
  

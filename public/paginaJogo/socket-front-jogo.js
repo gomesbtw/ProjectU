@@ -36,7 +36,7 @@ socket.on("connect_error", (erro) => {
 
 socket.on("retorno_imagem_sucesso", (dados2) =>{
   
-
+  console.log(dados2);
   const imagens = document.getElementsByName("img-game")
   imagens.forEach((imagem, i) => {
     if (i < dados2.length) {

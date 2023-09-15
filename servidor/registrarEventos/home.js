@@ -1,6 +1,6 @@
 import { encontrarUsuario } from "../db/usuariosDb.js";
 import autenticarUsuario from "../utils/autenticarUsuario.js";
-import {obterImagemDoBancoDeDados,obterImagemDoBancoDeDados2 } from "../db/imagemJogos.js"
+import {obterImagemDoBancoDeDados } from "../db/imagemJogos.js"
 import {obterTituloJogos,obterPrecoJogos,obterSinopseJogos} from "../db/obterDadosJogos.js"
 
 
@@ -8,9 +8,8 @@ import {obterTituloJogos,obterPrecoJogos,obterSinopseJogos} from "../db/obterDad
 async function registrarEventosImagem(socket, io) {
    socket.on("imagemJogoPrincipal", async () => {
 
-     const novaImagem = await obterImagemDoBancoDeDados();
-     const novaImagem2 = await obterImagemDoBancoDeDados2();
-     const listaDeImagens = [novaImagem,novaImagem2]
+     const listaDeImagens = await obterImagemDoBancoDeDados();
+ 
    
     socket.emit("retorno_imagem_sucesso", listaDeImagens);
    });

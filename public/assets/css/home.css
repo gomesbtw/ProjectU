@@ -3,10 +3,7 @@
     box-sizing:border-box;
     font-family:"Archivo"
 }
-img{
-    overflow-clip-margin: content-box;
-    overflow: clip;
-}
+
 
 
 
@@ -31,7 +28,7 @@ p,h1,h2,h3,h4,h5,h6{
 }
 body{
     font-family:"Archivo";
-    background-color:#fff;
+    background-color:#121214 !important;
     overflow-x:hidden;
     display:table;
     table-layout: fixed;
@@ -127,61 +124,21 @@ footer{
   }
 
 
- /* Centralize a imagem horizontal e verticalmente */
- .div-que-inicia-rotacao {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 500px; /* Defina a altura desejada para o contêiner da imagem */
-}
-
-.section-que-inicia-rotacao {
-    position: relative;
-}
-
-
-
-
-
-
-
-
-.span-esquerdo {
-    display: flex;
-}
-
-/* Estilize a imagem para garantir que ela não ultrapasse o contêiner */
 .img-game {
+    object-fit: contain;
     max-width: 100%;
     max-height: 100%;
-    display: block; /* Adicione essa linha para evitar espaços indesejados */
-    margin: auto; /* Adicione essa linha para centralizar a imagem horizontalmente */
-
-}
-
-.terceira-div-rotacao {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-#img-game{
+    display: flex; 
+    margin: 0 !important; 
     cursor: pointer;
     width: 100%;
+    height: 90%;
     transition: left 0.5s ease-in-out;
+
 }
 
-#img-game-segunda{
-   
-  
-    cursor: pointer;
-    width: 100%;
-   
-   
-    transition: left 0.5s ease-in-out;
-}
+
+
 html ::-webkit-scrollbar {
     width: 10px;
   }
@@ -194,11 +151,7 @@ html ::-webkit-scrollbar {
   }
 
 
-  .splide__slide{
-    width: 100vw;
-    height: 500px;
-    padding-top: 0px;
-  }
+ 
  
 main{
     height: 100% !important;
@@ -211,6 +164,7 @@ color: inherit; /* Cor inicial herdada */
 font-size: x-large;
 cursor:pointer;
 position:relative;
+color: #d8d8d8;
 }
 
 .classeA::after{
@@ -244,6 +198,7 @@ position:relative;
     border-radius: 10px;
 }
 
+
  .splide2 .splide__slide {
     margin-right: 50px;
     padding-top: 10px;
@@ -272,9 +227,23 @@ position:relative;
 
 .nome{
     font-size: 16px;
+    color: #d8d8d8;
 }
 
 .preco{
     font-size: 16px;
+    color: #d8d8d8;
+}
+
+.concertaSplide .splide{
+    display: flex;
+    height: 500px;
+    left: 300px;
+    overflow: hidden;
+    max-width: 1150px;
+    position: relative;
+    flex-direction: column;
+    margin: 0;
+
 }
 

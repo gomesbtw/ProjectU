@@ -36,7 +36,7 @@
                             <div class="line3"></div>
                         </div>
                         <ul class="nav-list">
-                            <li><a href="#s-home">Ínicio</a></li>
+                            <li><a href="Home.html">Ínicio</a></li>
                             <li><a href="#s-games">Jogos</a></li>
                             <li>
                             <a href="#s-logout" id="btnLogout">Logout</a>
@@ -50,24 +50,21 @@
             
     <main>
         <form action="/paginaJogo" method="GET" id="form-home">
-            <div class="div-que-inicia-rotacao">
-                <section class="section-que-inicia-rotacao" aria-roledescription="Carrossel" aria-label="novidades principais">
-                    <div class="segunda-div-rotacao">
-                        <div class="terceira-div-rotacao">
-                            <div class="div-cheia-grupos">
-                                <section class="splide" aria-label="Splide Basic HTML Example">
-                                    <div class="splide__track">
-                                          <ul class="splide__list">
-                                              <li class="splide__slide"><img src="" id="img-game" alt="Imagem do jogo" class="img-game"></li>
-                                              <li class="splide__slide"><img src="" id="img-game-segunda" alt="Imagem do jogo" class="img-game"></li>
-                                          </ul>
-                                    </div>
-                                  </section>
-                            </div>
-                        </div>
+            
+               
+                   
+            <div class="concertaSplide">
+                <section class="splide" aria-label="Splide Basic HTML Example">
+                    <div class="splide__track">
+                            <ul class="splide__list">
+                                
+                            </ul>
                     </div>
-                </section>
+                    </section>
             </div>
+                           
+             
+          
             <section id="sectionAzinho">
                 <a class="classeA" href="#todos-jogos">
                     Ver todos os jogos
@@ -77,7 +74,7 @@
             <section class="splide splide2" aria-label="Splide Basic HTML Example">
                 <div class="splide__track">
                       <ul class="splide__list">
-                            <li class="splide__slide">
+                            <!-- <li class="splide__slide">
                                 <a href="../paginaJogo/paginaJogo.html">
                                     <div class="aumentaTudo">
                                         <img src=""  name="img-game"alt="Imagem do jogo" class="imagenzinhas">
@@ -100,7 +97,7 @@
                                     
                                     </span>
                                 </div>
-                            </li>
+                            </li> -->
                       </ul>
                 </div>
               </section>
@@ -122,10 +119,11 @@
 
         console.log("entrou aq")
         var splide = new Splide( '.splide', {
-        type   : 'loop',
-        padding: '5rem',
+   
+        arrows:false,
         autoplay:true,
-        interval: 3000,
+        interval: 30000,
+        focus:"center",
         } );
         splide.mount();
 
@@ -136,7 +134,7 @@
             perMove: 1,
             focus: 'left',
             height: "250px",
-          
+            arrows:false,
         });
         splide2.mount();
 
